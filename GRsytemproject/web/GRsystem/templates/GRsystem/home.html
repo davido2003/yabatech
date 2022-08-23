@@ -1,0 +1,264 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Complaint Homepage</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <!-- <link rel="stylesheet" href="{% static 'complaint.css' %}"> -->
+</head>
+<body>
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+    }
+    body {
+      background-color: #0ba360;
+    
+    }
+    nav {
+      background-color: green;
+      height: 150px;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+    }
+    nav {
+      display: flex;
+    }
+    nav .div-home {
+      margin-top: 60px;
+      padding-right: 30%;
+    }
+    nav .div-sign {
+      margin-top: 60px;
+    }
+    nav .div-login{
+      padding-right: 1%;
+      margin-top: 60px;
+    }
+    nav .div-image {
+      padding-left: 2%;
+      margin-top: 20px;
+    }
+    nav .div-home a {
+      background-color: rgba(52, 219, 113, 0.63);
+      padding: 10px;
+      border-radius: 10px;
+      font-size: 20px;
+      border: 1px solid white;
+    }
+    nav .div-home a:hover {
+      background-color: white;
+      color: rgba(52, 219, 113, 0.63);
+      border: 1px solid yellow;
+    }
+    nav .div-sign a {
+      background-color: white;
+      color: lime;
+      padding: 10px 20px;
+      border-radius: 20px;
+      font-size: 20px;
+      border: 1px solid lime;
+    }
+    
+    nav .div-sign a:hover {
+      background-color: rgba(52, 219, 113, 0.63);
+      color: white;
+      border: 1px solid white;
+    }
+    nav .div-login a {
+      background-color: rgba(52, 219, 113, 0.63);
+      color: white;
+      padding: 10px 20px;
+      border-radius: 20px;
+      font-size: 20px;
+      border: 1px solid white;
+    }
+    nav .div-login a:hover {
+      background-color: white;
+      color: rgba(52, 219, 113, 0.63);
+      border: 1px solid yellow;
+    }
+    header {
+      height: 50px;
+      background-color: limegreen;
+    }
+    section {
+      margin: auto;
+      text-align: center;
+      margin-top: 50px;
+      font-size: 20px;
+    }
+    
+    @keyframes my-animation {
+      from {
+        color: white;
+        font-size: 22px;
+      }
+      to {
+        color: yellow;
+        font-size: 25px;
+      }
+    }
+    .animate {
+      animation-name: my-animation;
+      animation-duration: 7s;
+      animation-iteration-count: infinite;
+      position: relative;
+    }
+    .signup-nav img {
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+      background-attachment: fixed;
+      background-position: center;
+    }
+    .signup-section {
+      background-color: white;
+      width: 30%;
+      height: 500px;
+      margin: auto;
+      text-align: center;
+      margin-top: 50px;
+      border-radius: 10px;
+      color: black;
+      box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
+      margin-bottom: 100px;
+    }
+    .signup-section select{
+      border: 1px solid green;
+      width: 100%;
+      border-radius: 10px;
+      box-shadow: 2px 2px 7px rgba(0, 0, 0, 0.3);
+      text-align: center;
+      color: green;
+    }
+    .signup-section h1 {
+      color: #0ba360;
+      padding-top: 20px;
+    }
+    .form-check{
+      margin-top: 20px;
+    }
+    .signup-form {
+      margin: 20px;
+      height: 300px !important;
+    }
+    .signup-form input{
+        border: 1px solid green;
+        border-radius: 10px;
+        box-shadow: 2px 2px 7px rgba(0, 0, 0, 0.3);
+    }
+    .signup-form input::placeholder{
+      color: green;
+    }
+    .signup-form-signin {
+      text-decoration: none;
+    }
+    .signin-nav {
+      height: 300px;
+    }
+    
+    .signin-nav img {
+      width: 100%;
+      object-fit: cover;
+    }
+    .signin-section {
+      margin: auto;
+      text-align: center;
+      background-color: white;
+      width: 400px;
+      height: 300px;
+      border-radius: 10px;
+      margin-top: 50px;
+      box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
+      margin-bottom: 50px;
+    }
+    .signin-section h2{
+        color: green;
+        padding-top: 10px;
+    }
+    .signin-section form{
+        margin-top: 20px;
+        margin-left: 10px;
+    }
+    .signin-section input{
+        margin: 10px 0px;
+        margin-left: 80px;
+        border-radius: 10px;
+        border: 1px solid green;
+        text-align: center;
+        box-shadow: 2px 2px 7px rgba(0, 0, 0, 0.3);
+        
+    }
+    .signin-section-submit{
+        margin-left: 150px;
+    }
+    .signin-section-submit input{
+        padding: 5px 20px;
+    }
+    .signin-section a{
+        color: green;
+        text-decoration: none;
+        padding-top:0px;
+    }
+    .signin-section input ::placeholder{
+    border: none;
+    }
+    .signin-section input::placeholder{
+      color: green;
+      border: 1px solid white;
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    @media (max-width:900px){
+      nav .div-home {
+        padding-right: 2%;
+      }
+      nav .div-image {
+        margin-top: 60px;
+        width: 20%;
+      }
+      .signin-section-submit{
+        margin-left: 50px;
+    }
+    .signup-section{
+      width: 80%;
+      height:100vh;
+    }
+    }
+  </style>
+<nav>
+    <div class="div-image"><img src="{% static 'GRsystem/images/complaintYCT.png' %}" alt="Yabatech Logo" width="20%"></div>
+    <div class="div-home"><a href="/">Home</a></div>
+    <div class="div-login"><a href="/login/">Login</a></div>
+    <div class="div-sign"><a href="/register/">Sign Up</a></div>
+    
+</nav>
+<header>&nbsp;</header>
+
+<section>
+   <h2 class="animate"> WELCOME TO YABATECH COMPLAINT SYSTEM </h2>
+   <img src="{% static 'GRsystem/images/complaintbody2.png' %}" alt="complaint" max-width ="100%">
+</section>
+
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</body>
+</html>
